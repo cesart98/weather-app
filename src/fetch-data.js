@@ -12,5 +12,3 @@ const city = new Object;
 
 loadJson()
     .then(json => Object.assign(city, json))
-
-export const city;
