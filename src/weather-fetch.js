@@ -1,14 +1,14 @@
-function newFunction(latitude, longitude) {
-    let lat = latitude;
-    let lon = longitude;
-    let requestURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=dba1cfa92fd8532ebe1d3664c395d25f`
-    fetch(requestURL, { mode: 'cors' })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (response) {
-            console.log(response);
-        });
+async function loadJson() {
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appid}`;
+
+    let response = await fetch (url, { mode: 'cors' });
+    return response.json();
 }
 
-newFunction(28, -100); // return JSON with raw weather data
+let lat = 32.7767;
+let lon = -96.7970;
+let appid = 'dba1cfa92fd8532ebe1d3664c395d25f';
+const city = new Object;
+
+loadJson()
+    .then(json => Object.assign(city, json))
