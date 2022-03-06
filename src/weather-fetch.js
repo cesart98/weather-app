@@ -11,4 +11,4 @@ function newFunction(latitude, longitude) {
         });
 }
 
-newFunction(28, -100);
+newFunction(28, -100); // return JSON with raw weather data
