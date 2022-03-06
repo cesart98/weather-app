@@ -7,6 +7,27 @@
     <title>Weather Application</title>
 </head>
 <body>
+    <div>
+        <form>
+            <section class="contact-info">
+                <div>
+                    <label for="city_name">City Name</label>
+                    <input id="city_name" type="text" name="city">
+                </div>
+                <div>
+                    <label for="state_code">State Code</label>
+                    <input id="state_code" type="text" name="state">
+                </div>
+                <div>
+                    <label for="country_code">Country Code</label>
+                    <input id="country_code" type="text" name="country">
+                </div>
+            </section>
+            <section class="submit-btn">
+                <button type="submit">Search</button>
+            </section>       
+        </form>
+    </div>
     <script src='../src/fetch-data.js'></script>
 </body>
 </html>
