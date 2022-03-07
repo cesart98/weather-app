@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Application</title>
+    <script src='../src/fetch-data.js' defer></script>
 </head>
 <body>
     <div>
         <form>
-            <section class="contact-info">
+            <section class="search-info">
                 <div>
                     <label for="city_name">City Name</label>
                     <input id="city_name" type="text" name="city">
@@ -18,12 +19,11 @@
                     <label for="state_code">State Code</label>
                     <input id="state_code" type="text" name="state">
                 </div>
-            </section>
-            <section class="submit-btn">
-                <button type="submit">Search</button>
-            </section>       
+                <div>
+                    <button type="submit" id="submit_btn">Search</button>
+                </div>
+            </section>     
         </form>
     </div>
-    <script src='../src/fetch-data.js'></script>
 </body>
 </html>
