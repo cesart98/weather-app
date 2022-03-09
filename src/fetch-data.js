@@ -17,9 +17,9 @@ export function fetchData(event) {
     let cityName = event.target[0].value;
     let stateCode =  event.target[1].value;
     let appid = 'dba1cfa92fd8532ebe1d3664c395d25f';
+    let city = new Object;
 
     getLocation(cityName, stateCode, 'US')
-        .then(cityLocation => Object.assign(city, cityLocation))
         .then(city => getWeather(city.lat, city.lon))
         .then(cityWeather => Object.assign(city, cityWeather));
     event.preventDefault();
