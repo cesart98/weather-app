@@ -1,4 +1,4 @@
-function fetchData(event) {
+export function fetchData(event) {
     async function getLocation(cityName, stateCode, countryCode) {
         let url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&appid=${appid}`;
     
@@ -26,8 +26,3 @@ function fetchData(event) {
 
     return city;
 }
-
-let city = new Object;
-
-let form = document.querySelector('form');
-form.addEventListener('submit', event => fetchData(event));
