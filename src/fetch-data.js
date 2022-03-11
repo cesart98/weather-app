@@ -1,4 +1,4 @@
-export function fetchData(event) {
+export async function fetchData(event) {
 
     event.preventDefault();
 
