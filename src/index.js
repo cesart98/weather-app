@@ -2,8 +2,8 @@ import {fetchData} from './fetch-data.js'
 import {populateWebpage} from './populate-webpage.js'
 
 function main(event) {
-    fetchData(event)
-        .then(data => populateWebpage(data));
+    const city = fetchData(event);
+    populateWebpage(city);
 }
 
 let form = document.querySelector('form');
