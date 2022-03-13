@@ -1,32 +1,32 @@
-export function populateWebpage(data) {
+export default async function populateWebpage(city) {
     function populateCityName(name) {
         let cityName = document.querySelector('.city-name');
         cityName.textContent = name;
     }
-
-    /*async function populateTemps(temp) {
-        async function populateCurrentTemp() {
-            let currentTemp = await document.querySelector('.current-temp');
-            return currentTemp.textContent = temp.feels_like;
+    async function populateTemps(temps) {
+        function populateCurrentTemp() {
+            let currentTemp = document.querySelector('.current-temp');
+            currentTemp.textContent = temps.temp;
         }
-        async function populateHighTemp() {
-            let highTemp = await document.querySelector('.high-temp');
-            return highTemp.textContent = temp.temp_max;
+        function populateHighTemp() {
+            let highTemp = document.querySelector('.high-temp');
+            highTemp.textContent = temps.temp_max;
         }
-        async function populateLowTemp() {
-            let lowTemp = await document.querySelector('.low-temp');
-            return lowTemp.textContent = temp.temp_min;
+        function populateLowTemp() {
+            let lowTemp = document.querySelector('.low-temp');
+            lowTemp.textContent = temps.temp_min;
         }
+        await populateCurrentTemp();
+        await populateHighTemp();
+        await populateLowTemp();
+        return;
     }
-    async function populateWeatherDescription() {
-        async function getWeatherDescription() {
-            return city.weather[0].description;
-        }
-        let weatherDescription = await document.querySelector('.weather-description');
-        getWeatherDescription()
-            .then(info => weatherDescription.textContent = info);
+    function populateWeatherDescription(info) {
+        let weatherDescription = document.querySelector('.weather-description');
+        weatherDescription.textContent = info;
     }
-    */
-
-    populateCityName(data.name);
+    await populateCityName(city.name);
+    await populateTemps(city.main);
+    await populateWeatherDescription(city.weather[0].description);
+    return;
 }
