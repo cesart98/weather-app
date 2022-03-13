@@ -28,5 +28,6 @@ export default async function populateWebpage(city) {
     await populateCityName(city.name);
     await populateTemps(city.main);
     await populateWeatherDescription(city.weather[0].description);
+    
     return;
 }
