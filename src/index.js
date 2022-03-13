@@ -4,7 +4,8 @@ import populateWebpage from './populate-webpage.js';
 async function main(event) {
     event.preventDefault();
     let data = await fetchData(event);
-    return populateWebpage(data);
+    await populateWebpage(data);
+    return;
 }
 
 let form = document.querySelector('form');
